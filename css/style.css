@@ -1,0 +1,53 @@
+*, *::after, *::before {
+  margin: 0;
+  padding: 0;
+}
+
+
+* {
+  font-family: sans-serif;
+}
+
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+
+body {
+    text-align: center;
+}
+
+
+.modal {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+
+.modal--content--common {
+  display: none;
+  position: relative;
+  top: 90px;
+  margin: auto;
+  padding: 20px;
+  width: 350px;
+  height: 250px;
+  background-color: #eee;
+  line-height: 2.13em;
+}
+
+
+.modal--next--level {
+  color: rgb(58, 184, 110);
+}
+
+
+.modal--game--over {
+  color: rgb(182, 48, 48);
+}
