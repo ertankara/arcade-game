@@ -1,3 +1,6 @@
+## Live Version of the Game
+=> https://hiimnew.github.io/arcade-game/.
+
 ## Downloading the application
 Simply clone or downlaod it from this repo
 
