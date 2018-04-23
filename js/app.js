@@ -1,3 +1,4 @@
+"use strict";
 // Enemies our player must avoid
 var Enemy = function (x, y, speedRate) {
   // Variables applied to each of our instances go here,
@@ -64,6 +65,11 @@ Player.prototype.render = function () {
 
 
 
+/**
+ * Check players current position
+ * @param {number} x current X position
+ * @param {number} y current Y position
+ */
 Player.prototype.positionIsValid = function (x, y) {
   let isValid = true;
   // To keep it in the valid position on X
@@ -81,6 +87,12 @@ Player.prototype.positionIsValid = function (x, y) {
 
 
 
+/**
+ * Check the future position with positionIsValid() function
+ * before actually moving there, if it's a valid place then move
+ * if not do not move at all
+ * @param {string} keyInput receieved from event listener
+ */
 Player.prototype.handleInput = function (keyInput) {
   switch (keyInput) {
     case 'left': {
@@ -109,7 +121,7 @@ Player.prototype.handleInput = function (keyInput) {
 };
 
 
-// Collectibles for the player
+
 
 
 
@@ -159,13 +171,16 @@ function getRandomInt() {
 
 
 
+/**
+ * Check if player and bugs collide
+ */
 function checkCollisions() {
   allEnemies.forEach(bug => {
     // If player and a bug collides
     if (
       (bug.x > player.x - 85 && bug.x < player.x + 85) &&
       (bug.y > player.y - 50 && bug.y < player.y + 50)
-    ) {3
+    ) {
       $mainModal.style.display = 'block';
       $failedModal.style.display = 'block';
       // Make the player disappear until pushes enter key
@@ -181,6 +196,7 @@ function gameWon() {
   $mainModal.style.display = 'block';
   $successModal.style.display = 'block';
 
+  // Make the player disappear until pushes enter key
   player.x = 1000;
   player.y = 1000;
 }

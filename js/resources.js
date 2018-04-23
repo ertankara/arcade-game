@@ -65,8 +65,8 @@
        * the image's onload event handler is called. Finally, point
        * the image's src attribute to the passed in URL.
        */
-      resourceCache[url] = false;
-      img.src = url;
+      resourceCache[url] = false
+      img.src = url
     }
   }
 
@@ -82,21 +82,21 @@
    * for loading have in fact been properly loaded.
    */
   function isReady() {
-    var ready = true;
+    var ready = true
     for (var k in resourceCache) {
       if (resourceCache.hasOwnProperty(k) &&
         !resourceCache[k]) {
-        ready = false;
+        ready = false
       }
     }
-    return ready;
+    return ready
   }
 
   /* This function will add a function to the callback stack that is called
    * when all requested images are properly loaded.
    */
   function onReady(func) {
-    readyCallbacks.push(func);
+    readyCallbacks.push(func)
   }
 
   /* This object defines the publicly accessible functions available to
